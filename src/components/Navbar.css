@@ -1,0 +1,120 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;  
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;    
+  background-color:black;
+  z-index: 999;
+  
+}
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .menu a {
+    margin-right: 20px;
+    color: white;
+    text-decoration: none;
+  }
+  .menu a:hover
+  {
+    cursor: pointer;
+  }
+  
+  .hamburger {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    visibility: hidden;
+    margin: 12px;
+  }
+  
+  .hamburger div {
+    
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin-bottom: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .open .hamburger div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+  
+  .open .hamburger div:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .open .hamburger div:nth-child(3) {
+    transform: rotate(-45deg) translate(4px, -5px);
+  }
+  
+  @media (max-width: 768px) {
+    .menu {
+      display: none;
+    }
+  
+    .hamburger {
+        
+        display: flex;
+       margin-right: 20px;
+      visibility: visible;
+    }
+  
+    .open .hamburger div:nth-child(1) {
+      transform: rotate(45deg) translate(3px, 3px);
+    }
+  
+    .open .hamburger div:nth-child(2) {
+      opacity: 0;
+    }
+  
+    .open .hamburger div:nth-child(3) {
+      transform: rotate(-45deg) translate(2px, -2px);
+    }
+  
+    .menu.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      color: white;
+      background-color: black;
+      padding: 10px;
+      animation: slideDown 0.3s ease-in-out;
+      z-index: 2;
+    }
+  
+    .menu a {
+      display: block;
+      margin-bottom: 10px;
+      
+      color: white;
+      text-decoration: none;
+    }
+    @keyframes slideDown {
+        from {
+          transform: translateY(-10%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+  }
+  

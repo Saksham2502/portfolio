@@ -1,0 +1,64 @@
+.achievements {
+    padding: 40px;
+  }
+  
+  .achievements h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  .achievement-box {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    perspective: 1000px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+  
+  .achievement-box .front,
+  .achievement-box .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    backface-visibility: hidden;
+    transition: transform 0.5s;
+  }
+  
+  .achievement-box .front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .achievement-box .back {
+    transform: rotateY(180deg);
+    /* padding: 10px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .achievement-box:hover .front {
+    transform: rotateY(180deg);
+  }
+  
+  .achievement-box:hover .back {
+    transform: rotateY(0deg);
+  }
+  
